@@ -1,0 +1,17 @@
+# manifest: 指定 lpk 包的 manifest.yml 文件路径
+manifest: ./lzc-manifest.yml
+
+# pkgout: lpk 包的输出路径
+pkgout: ./
+
+# icon: 指定 lpk 包 icon 的路径（必须是 PNG 格式，512x512）
+icon: ./icon.png
+
+# compose_override - 覆盖不支持的 Docker Compose 参数
+# 此应用需要 GPU 硬件加速和主机网络模式
+compose_override:
+  services:
+    uxplay-web-service:
+      # GPU 硬件加速 - 用于视频解码
+      devices:
+        - /dev/dri:/dev/dri

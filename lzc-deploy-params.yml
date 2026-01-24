@@ -1,0 +1,31 @@
+params:
+  - id: timezone
+    type: string
+    name: "timezone"
+    description: "Timezone setting (e.g., Asia/Shanghai, America/New_York)"
+    default_value: "Asia/Shanghai"
+    optional: false
+    placeholder: "Asia/Shanghai"
+
+  - id: airplay_name
+    type: string
+    name: "AirPlay name"
+    description: "Display name for AirPlay device"
+    default_value: "uxplay-web"
+    optional: false
+    placeholder: "uxplay-web"
+    regex: "^[a-zA-Z0-9_-]+$"
+    regex_message: "Only letters, numbers, underscore and dash allowed"
+
+locales:
+  zh:
+    timezone:
+      name: "时区"
+      description: "时区设置（例如：Asia/Shanghai, Europe/Berlin）"
+    airplay_name:
+      name: "AirPlay 名称"
+      description: "AirPlay 设备的显示名称"
+
+unsupported_platforms:
+  - ios
+  - android
