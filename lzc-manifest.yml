@@ -1,12 +1,3 @@
-name: UxPlay Web
-package: community.lazycat.app.uxplay-web
-version: 1.0.0
-min_os_version: 1.3.8
-description: "AirPlay mirroring server with web interface for streaming from iOS/macOS devices"
-license: MIT
-homepage: https://github.com/johannvr/uxplay-web
-author: johannvr
-
 application:
   subdomain: uxplay-web
   background_task: true
@@ -16,10 +7,9 @@ application:
 
 services:
   uxplay-web-service:
-    # johannvr/uxplay-web:1.0.0
-    image: registry.lazycat.cloud/czyt/johannvr/uxplay-web:6fe15755383a2ee2
+    # upstream: johannvr/uxplay-web:1.0.3
+    image: docker.1ms.run/johannvr/uxplay-web:1.0.3
     network_mode: host
-    restart: unless-stopped
     environment:
       - PUID=1000
       - PGID=1000
@@ -27,11 +17,3 @@ services:
       - CUSTOM_PORT=11111
       - CUSTOM_HTTPS_PORT=11112
       - AIRPLAY_NAME={{.U.airplay_name}}
-
-locales:
-  en:
-    name: "UxPlay Web"
-    description: "AirPlay mirroring server with web interface for streaming from iOS/macOS devices"
-  zh:
-    name: "UxPlay Web"
-    description: "支持 iOS/macOS 设备投屏的 AirPlay 镜像服务器"

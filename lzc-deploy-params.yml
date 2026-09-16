@@ -25,7 +25,3 @@ locales:
     airplay_name:
       name: "AirPlay 名称"
       description: "AirPlay 设备的显示名称"
-
-unsupported_platforms:
-  - ios
-  - android

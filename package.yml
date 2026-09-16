@@ -1,0 +1,18 @@
+package: community.lazycat.app.uxplay-web
+version: 1.0.0
+name: UxPlay Web
+description: "AirPlay mirroring server with web interface for streaming from iOS/macOS devices"
+min_os_version: "1.5.0"
+license: MIT
+homepage: https://github.com/johannvr/uxplay-web
+author: johannvr
+locales:
+  zh:
+    name: "UxPlay Web"
+    description: "支持 iOS/macOS 设备投屏的 AirPlay 镜像服务器"
+  en:
+    name: "UxPlay Web"
+    description: "AirPlay mirroring server with web interface for streaming from iOS/macOS devices"
+unsupported_platforms:
+  - ios
+  - android

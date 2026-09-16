@@ -1,0 +1,40 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: .lazycat-build/uxplay-web.lpk
+  target_arch: amd64
+
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: uxplay-web-service
+
+build:
+  run_buildscript: false
+
+images:
+  # 主应用：上游 Docker Hub johannvr/uxplay-web，完整三段 SemVer（1.0.0~1.0.3），排除 latest
+  - id: uxplay-web-service
+    target: service
+    service: uxplay-web-service
+    source: johannvr/uxplay-web
+    channel: stable
+    sort: semver
+    tag_regex: '^v?\d+\.\d+\.\d+$'
+    delivery:
+      mode: mirror
+
+stores:
+  official:
+    # Official store publication is intentionally disabled; publish only to Miaomiao Store.
+    enabled: false
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: UxPlay Web
+    summary: "支持 iOS/macOS 设备投屏的 AirPlay 镜像服务器"
