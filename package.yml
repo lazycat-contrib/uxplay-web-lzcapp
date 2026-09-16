@@ -1,5 +1,5 @@
 package: community.lazycat.app.uxplay-web
-version: 1.0.0
+version: 1.0.3
 name: UxPlay Web
 description: "AirPlay mirroring server with web interface for streaming from iOS/macOS devices"
 min_os_version: "1.5.0"
